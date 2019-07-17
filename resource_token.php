@@ -38,11 +38,11 @@ if (!empty($headers)) {
 }
 return null;
 }
-var_dump(getAuthorizationHeader());
-var_dump(getBearerToken());
-var_dump($_POST);
-var_dump($_GET);
-die;
+// var_dump(getAuthorizationHeader());
+// var_dump(getBearerToken());
+// var_dump($_POST);
+// var_dump($_GET);
+// die;
 $post = [];
 if(!empty($_POST)){$post=$_POST;}
  $jwt = getBearerToken();
