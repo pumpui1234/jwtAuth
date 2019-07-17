@@ -21,7 +21,7 @@ $token = array(
     "aud" => $aud,
     "iat" => $iat,
     "nbf" => $nbf,
-    "exp" => $exp,
+    // "exp" => $exp,
     "data" => array(
         "status_" => $status_,
     )

@@ -1,26 +1,18 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors',1);
-// required headers
-header("Access-Control-Allow-Origin: http://localhost:8888/JWTauth/"); //check your locals
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
- 
 // files for decoding jwt will be here
 include_once 'core.php';
 require_once __DIR__.'/vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
 // get posted data
-$data = json_decode(file_get_contents("http://localhost:8888/JWTauth/gen_token.php"));
+// $data = json_decode(file_get_contents("http://localhost:8888/JWTauth/gen_token.php"));
 // get jwt
-$jwt=isset($data->jwt) ? $data->jwt : "";
-// var_dump($data); die;
-//  $jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLm9yZyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxMzU2OTk5NTI0LCJuYmYiOjEzNTcwMDAwMDAsImRhdGEiOnsiaWQiOiI2NjYiLCJ1c2VybmFtZSI6InB1bXB1aTY2NiIsImVtYWlsIjoibW9uZ2tvbC5uQGFkeWltLmNvbSJ9fQ.-ydDEvkJkiYQZ99DVrkcq_OVFlhTZs6bDLGDMk8-SXM";
+// $jwt=isset($data->jwt) ? $data->jwt : "";
 
- 
+// var_dump($data); die;
+ $jwt = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wb3Jua2FzZW1jbGluaWMtaXNzLmNvbSIsImF1ZCI6Imh0dHA6XC9cL3Bvcm5rYXNlbWNsaW5pYy1hdXRoLmNvbSIsImlhdCI6MTM1Njk5OTUyNCwibmJmIjoxMzU3MDAwMDAwLCJkYXRhIjp7InN0YXR1c18iOjF9fQ.CJFhKnxnR9FTHNw3txydug1_FvBWAB9tBeIOaUeqn5k";
 // decode jwt here
 // if jwt is not empty
 if($jwt){ 
